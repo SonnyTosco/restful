@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <html>
+      <head>
+      </head>
+      <body>
+        {% if product %}
+          <form action="/update/{{product['id']}}" method="POST">
+            Name:<input type='text' name='name' value="{{product['name']}}">
+            Description:<input type='textarea' name='description' value="{{product['description']}}">
+            Price:<input type='text' name='price' value="{{product['price']}}">
+            <input type='submit' value='Update Product'>
+          </form>
+        {% endif %}
+        <a href="/show/{{product['id']}}"><button>Show</button>
+        <a href="/"><button>Back</button>
+      </body>
+    </html>
+
+  </body>
+</html>

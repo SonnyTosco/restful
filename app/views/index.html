@@ -3,6 +3,25 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+    <h2>Product Lines</h2>
+    <table>
+      <th>Product Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+      {% for product in products %}
+      <tr>
+        <td>{{product['name']}}</td>
+        <td>{{product['description']}}</td>
+        <td>{{product['price']}}</td>
+        <td>
+          <a href="/show/{{product['id']}}"><button>Show</button>
+          <a href="/edit/{{product['id']}}"><button>Edit</button>
+          <a href="/destroy/{{product['id']}}"><button>Remove</button>
+        </td>
+      </tr>
+      {% endfor %}
+      <a href="/new"><button>Add Product</button>
+    </table>
   </body>
 </html>
